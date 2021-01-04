@@ -1,0 +1,104 @@
+body {
+  font-family: Sans-Serif;
+  font-size: 1.5rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: black;
+}
+
+button {
+  border: none;
+  background: #0070f3;
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 1rem;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: gray;
+  font-weight: bold;
+}
+
+.headerLogo {
+  height: 8rem;
+  width: 8rem;
+}
+
+#homeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-around;
+  justify-content: space-around;
+  min-height: 30rem;
+}
+
+#searchResultsContainer {
+  max-height: 20rem;
+  width: 20rem;
+  overflow: auto;
+  border-left: 1px solid #999;
+}
+
+#mainSearch {
+  border-radius: 8px;
+  border: 1px solid #999;
+  height: 2rem;
+  width: 20rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+#mainSearchBtn {
+  margin-top: 40px;
+}
+
+.searchItem {
+  display: flex;
+  font-size: 1.5rem;
+  padding: 1rem;
+  justify-content: space-between;
+  border-bottom: 1px solid #999;
+  align-items: center;
+  height: 4rem;
+}
+
+.searchItem:hover {
+  background-color: lightgray;
+}
+
+.searchItemBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  font-size: 2rem;
+  color: black;
+  text-align: center;
+  height: 0.15rem;
+  width: 0.15rem;
+  transition: transform 1s;
+}
+
+.searchItemBtn:hover {
+  transform: rotate(90deg);
+}
+
+.searchCountry {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/*# sourceMappingURL=style.css.map */

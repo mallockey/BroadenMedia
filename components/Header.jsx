@@ -4,7 +4,8 @@ const Header = (props) => {
 
   return(
     <div id="header">
-      <div id="siteTitle">Chamber Escape</div>
+      <img src="/images/logo.png" className="headerLogo"></img>
+      <a href="/">About</a>
     </div>
   )
 }

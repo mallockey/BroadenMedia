@@ -74,7 +74,7 @@ const App = () => {
                       removeFromResultsContainer={removeFromResultsContainer}
                       key={Math.random()}
                     />
-            }) :'Search for your news sources below to get started.'}
+            }) :'Search for your news sources below to get started!'}
           </div>
           <div id="searchBar">
             <input type="text" className="mainSearch"
