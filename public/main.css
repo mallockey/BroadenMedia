@@ -1,0 +1,209 @@
+body {
+  width: 100%;
+}
+button {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.usersSourceItem {
+  font-family: 'Times New Roman', Times, serif;
+  border-style: solid;
+  border-width: 1px;
+  width: auto;
+  padding : .5rem;
+  margin: .5rem;
+}
+
+.usersSourceItem:hover{
+  border-color: orange;
+}
+
+#usersSourcesContainer {
+  display: flex;
+  justify-content: space-around;
+  align-content: space-between;
+  flex-wrap: wrap;
+  flex-flow: wrap;
+  width: 40rem;
+  z-index: 9;
+  padding: 1rem;
+}
+
+#header {
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: cadetblue;
+}
+
+#siteTitle {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2rem;
+}
+
+#homeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80%;
+}
+#searchBar {
+  padding: 1rem;
+}
+
+.mainSearch {
+  height: 3rem;
+  width: 25rem;
+}
+
+#searchResultsContainer {
+  width: 25rem;
+
+  border-bottom: 1px dotted gray;
+  border-left: 1px dotted gray;
+  border-right: 1px dotted gray;
+
+  overflow-y:auto;
+  max-height: 15rem;
+}
+#researchTopicContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#newsArticleContainer {
+  display: flex;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.singleNewsArticleContainer {
+  display: flex;
+  flex-direction: column;
+  height: 20rem;
+  width: 20rem;
+  margin: 1rem;
+  padding:1rem;
+  background-color: blanchedalmond;
+  font-weight: bolder;
+}
+
+.newsArticleImage {
+  height: 5rem;
+  width: 5rem;
+}
+
+.articleImg {
+  height: 15rem;
+  width: 15rem;
+}
+
+.searchItem {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted gray;
+  padding: 1rem;
+  height: 2rem;
+}
+
+.searchItem:hover {
+  background-color: lightgray;
+}
+
+.searchItemBtn {
+  height: 2rem;
+  width: 2rem;
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+#mainSearchBtn {
+  margin-top: 1rem;
+  font-size: medium;
+  border-style: double;
+  border-color: #61dafb;
+  color:#61dafb;
+  height: 2rem;
+  border-radius: 10px;
+  width: 10rem;
+  outline:none;
+  background: none;
+}
+
+.removeSpan {
+  font-style: italic;
+  font-size: x-small;
+}
+
+.searchCountry {
+  font-size: small;
+  font-style: italic;
+}
+
+#footer {
+  height: 20rem;
+
+}
+
+#totalCountries {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 5rem;
+  width: 100vw;
+  background-color: bisque;
+}
+#scoreCardContainer {
+  display:flex;
+  flex-direction: column;
+}
+
+#countryText {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: larger;
+}
+
+.scoreCard {
+  display: flex;
+  padding-right: 5rem;
+  padding-left: 5rem;
+  border-bottom: 1px dotted gray;
+}
+
+img {
+  height: 30rem;
+  width: 30rem;
+}
+
+
+@media only screen and (max-width: 600px){
+  img {
+    height: 15rem;
+    width: 15rem;
+  }
+}
+
+.scoreCardText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+  text-align: center;
+  padding: 5rem;
+}
+
+.singleScoreAndImage{
+  padding: 5rem;
+}
