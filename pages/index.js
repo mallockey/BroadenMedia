@@ -5,6 +5,7 @@ import UsersSourceItem from '../components/UsersSourceItem.jsx';
 import calcScore from '../utilityFunctions/calcScore.js';
 import {getAllSources} from '../utilityFunctions/fetchAPI.js';
 import SearchListItem from '../components/SearchListItem';
+import Footer from '../components/Footer';
 
 const App = () => {
   const [allSources, setAllSources] = useState(0);
@@ -96,6 +97,7 @@ const App = () => {
           </a>
           {userScoreShow ? <UserScore usersSources={usersSources} usersScore={usersScore} /> : ''}
         </div>
+        <Footer />
     </div>
   )
 };
