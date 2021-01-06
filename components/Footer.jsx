@@ -3,11 +3,8 @@ import React from 'react'
 const Footer = () => {
   return(
     <div id="footer">
-      <span>
       <a href="https://github.com/mallockey">Github</a>
-
-      </span>
-      This is the footer
+      <a href="https://newsapi.org/">Powered by NewsAPI</a>
     </div>
   )
 }

@@ -64,9 +64,8 @@ const App = () => {
   },[])
 
   return(
-    <div>
+    <div id="homeContainer">
       <Header />
-        <div id="homeContainer">
           <span><h2>My News Sources are:</h2></span>
           <div id="usersSourcesContainer">
             {usersSources.length > 0 ? usersSources.map(source => {
@@ -79,7 +78,7 @@ const App = () => {
           </div>
           <div id="searchBar">
             <input type="text" className="mainSearch"
-              placeholder="Enter in your news sources"
+              placeholder="Ex: Fox News, CNN"
               onChange={handleSearchResults}
               id="mainSearch">
             </input>
@@ -96,7 +95,6 @@ const App = () => {
           <button type="button" id="mainSearchBtn" onClick={handleShowScore}>Show me my score</button>
           </a>
           {userScoreShow ? <UserScore usersSources={usersSources} usersScore={usersScore} /> : ''}
-        </div>
         <Footer />
     </div>
   )

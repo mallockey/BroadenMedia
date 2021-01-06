@@ -1,12 +1,9 @@
-html {
-  min-height: 100%;
-}
-
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   font-family: Sans-Serif;
   font-size: 1.5rem;
-  height: 100%;
-  min-height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -37,6 +34,7 @@ button {
   align-items: center;
   color: gray;
   font-weight: bold;
+  width: 100%;
 }
 
 .headerLogo {
@@ -47,12 +45,10 @@ button {
 #homeContainer {
   display: flex;
   flex-direction: column;
+  width: 100%;
   align-items: center;
   align-content: space-around;
   justify-content: space-around;
-  min-height: 100%;
-  position: relative;
-  padding-bottom: 20rem;
 }
 
 #searchResultsContainer {
@@ -129,12 +125,16 @@ button {
 }
 
 #footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-color: #fafafa;
   border-top: 1px solid #eaeaea;
-  height: 10rem;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */
