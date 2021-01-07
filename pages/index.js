@@ -6,6 +6,7 @@ import calcScore from '../utilityFunctions/calcScore.js';
 import {getAllSources} from '../utilityFunctions/fetchAPI.js';
 import SearchListItem from '../components/SearchListItem';
 import Footer from '../components/Footer';
+import CommonSources from '../components/CommonSources';
 
 const App = () => {
   const [allSources, setAllSources] = useState(0);
@@ -64,18 +65,11 @@ const App = () => {
   },[])
 
   return(
-    <div id="homeContainer">
+    <div id="main">
       <Header />
-          <span><h2>My News Sources are:</h2></span>
-          <div id="usersSourcesContainer">
-            {usersSources.length > 0 ? usersSources.map(source => {
-              return <UsersSourceItem
-                      source={source}
-                      removeFromResultsContainer={removeFromResultsContainer}
-                      key={Math.random()}
-                    />
-            }) :'Search for your news sources below to get started!'}
-          </div>
+        <div id="mainContainer">
+          <div id="mainSearchContainer">
+          <h3>Search for your news sources below to get started!</h3>
           <div id="searchBar">
             <input type="text" className="mainSearch"
               placeholder="Ex: Fox News, CNN"
@@ -91,9 +85,23 @@ const App = () => {
                     />
             }) : ''}
           </div>
-          <a href ="#totalCountries">
-          <button type="button" id="mainSearchBtn" onClick={handleShowScore}>Show me my score</button>
-          </a>
+            <a href ="#totalCountries">
+              <button type="button" id="mainSearchBtn" onClick={handleShowScore}>Show me my score</button>
+            </a>
+          </div>
+          <div id="usersSourcesMainContainer">
+          <h2>My News Sources:</h2>
+          <div id="usersSourcesContainer">
+            {usersSources.length > 0 ? usersSources.map(source => {
+              return <UsersSourceItem
+                      source={source}
+                      removeFromResultsContainer={removeFromResultsContainer}
+                      key={Math.random()}
+                    />
+            }) :''}
+            </div>
+          </div>
+          </div>
           {userScoreShow ? <UserScore usersSources={usersSources} usersScore={usersScore} /> : ''}
         <Footer />
     </div>

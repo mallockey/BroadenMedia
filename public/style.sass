@@ -32,13 +32,19 @@ button
 .headerLogo
   height: 8rem
   width: 8rem
-#homeContainer
+#main
   display: flex
   flex-direction: column
   width: 100%
   align-items: center
   align-content: space-around
   justify-content: space-around
+#mainSearchContainer
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  justify-content: center
+  padding-top: 4rem
 #searchResultsContainer
   max-height: 20rem
   width: 20rem
@@ -63,6 +69,9 @@ button
   height: 4rem
 .searchItem:hover
   background-color: lightgray
+.removeSpan
+  font-style: italic
+  font-size: 1rem
 .searchItemBtn
   display: flex
   justify-content: center
@@ -80,18 +89,26 @@ button
   font-size: 1rem
   font-style: italic
 .usersSourceItem
-  background: none
   color: black
   border: 1px solid #999
+  border-radius: 30px
+  background: #0070f3
+  color: white
+.usersSourceItem:hover
+  background-color: #FF6347
+  border: 1px solid #ADD8E6
 #usersSourcesContainer
   display: flex
+  flex-shrink: 2
   justify-content: space-around
-  max-height: 30rem
-  max-width: 40rem
+  max-height: 20rem
+  max-width: 20rem
   flex-wrap: wrap
-  align-items: center
   justify-items: center
   margin-bottom: 20px
+#usersSourcesMainContainer
+  display: flex
+  min-height: 100%
 #footer
   display: flex
   justify-content: space-around
@@ -103,3 +120,17 @@ button
   position: fixed
   bottom: 0
   font-size: 1rem
+#commonSourcesContainer
+  margin-top: 2rem
+  display: flex
+  border: 1px solid #eaeaea
+  flex-direction: column
+  align-items: flex-start
+  min-height: 40rem
+  padding: 1rem
+#mainContainer
+  display: flex
+  justify-content: space-evenly
+
+  width: 100%
+  height: 100%
