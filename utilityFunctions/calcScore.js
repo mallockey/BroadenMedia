@@ -2,25 +2,39 @@ function calcScore(allSources){
   const leftWingSources = ['ABC News', 'ABC News (AU)', 'CNN', 'CNN Spanish', 'Reddit /r/all']
   const rightWingSources = ['Fox News', 'The American Conservative', 'The Hill']
 
-  let leftWingScore = 0;
-  let rightWingScore = 0;
-  let uncategorizedScore = 0;
-
+  let scoreObj = {
+    republican : {
+      republicanSources : [],
+      score : 0
+    },
+    democratic : {
+      democraticSources : [],
+      score: 0
+    },
+    uncategorized : {
+      uncategorizedSources : [],
+      score: 0
+    }
+  }
+  
   for(let i = 0; i < allSources.length; i++){
     if(leftWingSources.includes(allSources[i].name)){
-      leftWingScore++
+      scoreObj.democratic.democraticSources.push(allSources[i].name)
+      scoreObj.democratic.score++
     }else if (rightWingSources.includes(allSources[i].name)){
-      rightWingScore++
+      scoreObj.republican.republicanSources.push(allSources[i].name)
+      scoreObj.republican.score++
     }else{
-      uncategorizedScore++
+      scoreObj.uncategorized.uncategorizedSources.push(allSources[i].name)
+      scoreObj.uncategorized.score++
     }
   }
 
-  leftWingScore = leftWingScore / allSources.length * 100;
-  rightWingScore = rightWingScore / allSources.length * 100;
-  uncategorizedScore = uncategorizedScore / allSources.length * 100;
+  scoreObj.democratic.score = Math.round((scoreObj.democratic.score / allSources.length) * 100)
+  scoreObj.republican.score = Math.round((scoreObj.republican.score / allSources.length) * 100)
+  scoreObj.uncategorized.score = Math.round((scoreObj.uncategorized.score / allSources.length) * 100)
 
-  return [Math.round(leftWingScore),Math.round(rightWingScore),Math.round(uncategorizedScore)]
+  return scoreObj
 }
 
 export default calcScore;
