@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Header.jsx';
-import UserScore from '../components/UserScore.jsx';
+import Footer from '../components/Footer';
 import UsersSourceItem from '../components/UsersSourceItem.jsx';
 import calcScore from '../utilityFunctions/calcScore.js';
 import {getAllSources} from '../utilityFunctions/fetchAPI.js';
 import SearchListItem from '../components/SearchListItem';
-import Footer from '../components/Footer';
-import CommonSources from '../components/CommonSources';
-import Democratic from '../components/scoreCards/Democratic.jsx';
-import Republican from '../components/scoreCards/Republican.jsx';
-import Uncategorized from '../components/scoreCards/Uncategorized.jsx';
+import ScoreCard from '../components/ScoreCard';
+
+// let countries = props.usersSources.map(source => countryCodeMap[source.country.toUpperCase()])
+// countries = [... new Set(countries)]
 
 const App = () => {
   const [allSources, setAllSources] = useState(0);
@@ -66,16 +65,15 @@ const App = () => {
     getSources()
     return () => {return true}
   },[])
+
   if(userScoreShow){
     return(
       <div id="main">
         <Header />
         <div id="scoreCardContainer">
-          {console.log(usersScore.republican)}
-          
-            <Democratic demoScore={usersScore.democratic} />
-            <Republican repubScore={usersScore.republican} />
-            <Uncategorized uncatScore={usersScore.uncategorized} />
+          <ScoreCard currentScore={usersScore.democratic} partyName={'democratic'} partyImage='demo'/>
+          <ScoreCard currentScore={usersScore.republican} partyName={'republican'} partyImage='repub'/>
+          <ScoreCard currentScore={usersScore.uncategorized} partyName={'uncategorized'} partyImage='uncat'/>
         </div>
           <Footer />
       </div>
@@ -105,7 +103,7 @@ const App = () => {
               {
                 usersSources.length === 0 ?
                   <button type="button" 
-                    disabled="true" 
+                    disabled={true}
                     id="mainSearchBtn" 
                     onClick={handleShowScore}>Add some sources
                   </button>
