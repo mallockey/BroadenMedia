@@ -13,7 +13,7 @@ const ScoreCard = (props) => {
   return(
     <div className="scoreCard">
     <div className="scoreTitleImage">
-      <h3>{props.partyName.toUpperCase()}</h3>
+      <h3>{props.partyName.charAt(0).toUpperCase() + props.partyName.slice(1)}</h3>
       <img src={`/images/${props.partyImage}.png`} />
     </div>
     <span>

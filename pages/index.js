@@ -6,9 +6,7 @@ import calcScore from '../utilityFunctions/calcScore.js';
 import {getAllSources} from '../utilityFunctions/fetchAPI.js';
 import SearchListItem from '../components/SearchListItem';
 import ScoreCard from '../components/ScoreCard';
-
-// let countries = props.usersSources.map(source => countryCodeMap[source.country.toUpperCase()])
-// countries = [... new Set(countries)]
+import { WorldMap } from "react-svg-worldmap";
 
 const App = () => {
   const [allSources, setAllSources] = useState(0);
@@ -16,6 +14,7 @@ const App = () => {
   const [userScoreShow, setShowUserScore] = useState(false);
   const [usersScore, setUsersScore] = useState(0);
   const [usersSources, setUsersSources] = useState([])
+  const [usersCountryCodes, setUsersCountryCodes] = useState([])
 
   function addToResultsContainer(source){
 
@@ -41,6 +40,7 @@ const App = () => {
       return
     }
     setUsersScore(calcScore(usersSources));
+    getCountryCodes()
     setShowUserScore(true);
   }
 
@@ -54,6 +54,31 @@ const App = () => {
 
     let searchResults = allSources.filter(source => source.name.toLowerCase().includes(searchDiv.value.toLowerCase()))
     setSearchListItems(searchResults)
+  }
+
+  function getCountryCodes(){
+    
+    // const data =
+    // [
+    //   { country: "cn", value: 1389618778 }, // china
+    //   { country: "in", value: 1311559204 }, // india
+    //   { country: "us", value: 331883986 }
+    // ]
+
+  let countries = usersSources.map(source => source.country)
+  let countryArr = []
+  for(let i = 0; i < countries.length; i++){
+    console.log('hello')
+    countryArr.push({
+      country: countries[i],
+      color: 'blue',
+      value: 'yes'
+    })
+  }
+
+  countryArr = new Set(countryArr)
+  console.log(countryArr.size)
+  setUsersCountryCodes(countryArr)
   }
 
   useEffect(() => {
@@ -70,7 +95,12 @@ const App = () => {
     return(
       <div id="main">
         <Header />
-        <div id="scoreCardContainer">
+        <div id="scoreCardContainer">   
+          {usersCountryCodes.size > 1 ?
+            <WorldMap color="blue" title={` Your news comes from ${usersCountryCodes.size} countries`} value-suffix="people" size="lg" data={usersCountryCodes}/>
+            :
+            <WorldMap color="blue" title={`Your news comes from ${usersCountryCodes.size} country`} value-suffix="people" size="lg" data={usersCountryCodes}/>
+          }
           <ScoreCard currentScore={usersScore.democratic} partyName={'democratic'} partyImage='demo'/>
           <ScoreCard currentScore={usersScore.republican} partyName={'republican'} partyImage='repub'/>
           <ScoreCard currentScore={usersScore.uncategorized} partyName={'uncategorized'} partyImage='uncat'/>
