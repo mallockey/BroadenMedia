@@ -9,6 +9,7 @@ $siteFontFamily: Sans-Serif
 img
   height: 5rem
   width: 5rem
+  border-radius: 5px
 body
   display: flex
   flex-direction: column
@@ -55,6 +56,18 @@ button
   align-items: center
   align-content: space-around
   justify-content: space-around
+#scoreCardContainer
+  padding: 2rem
+  display: flex
+  justify-content: space-around
+  width: 100%
+.scoreCard
+  display: flex
+  flex-direction: column
+  padding: 1rem
+  border: 1px solid #C0C0C0	
+  border-radius: 5px
+  background-color: white
 #homeMain
   display: flex
   height: 100vh
@@ -67,6 +80,30 @@ button
   width: 20rem
   overflow: auto
   border-left: 1px solid #999
+@media (max-width: 768px)
+  #homeMain
+    flex-direction: column-reverse
+    align-content: center
+    align-items: center
+    justify-content: flex-end
+  #searchResultsContainer
+    max-height: 10rem
+  #scoreCardContainer
+    background-color: #F8F8F8	
+    flex-direction: column
+    align-self: center
+    max-width: 30rem
+    padding: 0
+    width: 100%
+    border-bottom: 1px solid #999
+  .scoreCard
+    border: none
+    padding: 0
+    width: 100%
+  body
+    font-size: 1rem
+  .countryAndCat
+    flex-direction: column
 #mainSearchInput
   border-radius: 8px
   border: 1px solid #999
@@ -143,24 +180,11 @@ button
   align-items: flex-start
   min-height: 40rem
   padding: 1rem
-.scoreCard
-  display: flex
-  flex-direction: column
-  padding: 1rem
-  border: 1px solid #606060	
-  border-radius: 5px
-  box-shadow: 1px 1px 1px #606060	
-  background-color: white
 .scoreTitleImage
   display: flex
   justify-content: space-around
   align-items: center
   border-bottom: 1px solid #eaeaea
-#scoreCardContainer
-  padding: 2rem
-  display: flex
-  justify-content: space-around
-  width: 100%
 .smallerFont
   font-size: 1rem
   padding: 1rem

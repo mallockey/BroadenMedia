@@ -8,6 +8,8 @@ import SearchListItem from '../components/SearchListItem';
 import Recommendation from '../components/Recomendation';
 import ScoreCard from '../components/ScoreCard';
 import { WorldMap } from "react-svg-worldmap";
+import manualSources from '../data/manualSources';
+import Head from 'next/head'
 
 const App = () => {
   const [allSources, setAllSources] = useState(0);
@@ -59,38 +61,40 @@ const App = () => {
 
   function getCountryCodes(){
     
-    // const data =
-    // [
-    //   { country: "cn", value: 1389618778 }, // china
-    //   { country: "in", value: 1311559204 }, // india
-    //   { country: "us", value: 331883986 }
-    // ]
+    let countryObj = {}
+    usersSources.map(source => {
+      if(!(countryObj.hasOwnProperty(source.country))){
+        countryObj[source.country] = {
+          country: source.country,
+          color: 'blue',
+          value: [source.name]
+        }
+      }else{
+        countryObj[source.country].value.push(source.name)
+      }
 
-    let countries = usersSources.map(source => source.country)
-    let countryArr = []
-    for(let i = 0; i < countries.length; i++){
-      countryArr.push({
-        country: countries[i],
-        color: 'blue',
-        value: 'yes'
-      })
-    }
-    countryArr = new Set(countryArr)
-    setUsersCountryCodes(countryArr)
+      countryObj[source.country].value.toString()
+    })
+
+    setUsersCountryCodes(Object.values(countryObj))
   }
 
   useEffect(() => {
 
     async function getSources(){
-      setAllSources(await getAllSources())
+      let temp = await getAllSources()
+      temp = temp.concat(manualSources)
+      setAllSources(temp)
     }
 
     getSources()
+    console.log(allSources)
     return () => {return true}
   },[])
 
   if(userScoreShow){
     return(
+ 
       <div id="main">
         <Header />
         <div id="scoreMain">
@@ -100,17 +104,17 @@ const App = () => {
           </div>
           <div className="countryAndCat">
             <div>
-              <h3>{ `Where your news comes from` }</h3>
-              <WorldMap backgroundColor="#F8F8F8" color="blue" title='' value-suffix="people" size="lg" data={usersCountryCodes}/>
+              <h3>{ `Your news comes from ${usersCountryCodes.length} ${usersCountryCodes.length === 1 ? 'country' : 'countries'}` }</h3>
+              <WorldMap backgroundColor="#F8F8F8" color="blue" title='' valuePrefix={': '} size="lg" data={usersCountryCodes} frame={true} frameColor={'#C0C0C0'} />
             </div>
             {usersScore.uncategorized.score > 0 ?
-              <div>
+              <div className="scorePara">
                 <h3>The rest of these news sources are uncategorized</h3>
                 <p>
-                  This does not mean they arent biased, it just means that we are unsure of their bias at this time
+                  This does not mean they are unbiased just they we are unsure of their bias at this time.
                 </p>
                 <span className="smallerFont">Because you chose:
-                  {usersScore.uncategorized.uncategorizedSources.join()}
+                  <b>{usersScore.uncategorized.uncategorizedSources.join()}</b>
                 </span>
               </div>
               :
@@ -120,9 +124,11 @@ const App = () => {
           <Recommendation usersScore={usersScore} />
         </div>
       </div>
+
     )
   }else{
     return(
+      <>
       <div id="main">
         <Header />
           <div id="homeMain">
@@ -172,6 +178,7 @@ const App = () => {
             </div>
           <Footer />
       </div>
+      </>
     )
   }
 };

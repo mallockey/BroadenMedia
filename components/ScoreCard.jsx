@@ -6,8 +6,7 @@ const ScoreCard = (props) => {
     republican: "The Republican Party, also referred to as the GOP (Grand Old Party), \
                  is one of the two major contemporary political parties in the United States \
                  along with its main, historic rival, the Democratic Party.",
-    democratic: "The Democratic Party's philosophy of modern liberalism blends notions of civil liberty and social equality with support for a mixed economy.",
-    uncategorized : 'These sources are uncategorized. This does not mean they arent biased, it just means that we are unsure of their bias at this time'
+    democratic: "The Democratic Party's philosophy of modern liberalism blends notions of civil liberty and social equality with support for a mixed economy."
   }
 
   return(
@@ -17,14 +16,14 @@ const ScoreCard = (props) => {
       <img src={`/images/${props.partyImage}.png`} />
     </div>
     <span>
-      {props.currentScore.score}% of your media sources from {props.partyName} sources
+      {props.currentScore.score}% of your media sources come from {props.partyName} sources
     </span>
       <div className="scorePara">
         <p>{partyDesc[props.partyName]}</p>
       </div>
     {props.currentScore[`${props.partyName}Sources`].length > 0 ? 
       <span className="smallerFont">Because you chose:
-        {props.currentScore[`${props.partyName}Sources`].join()}
+        <b>{props.currentScore[`${props.partyName}Sources`].join()}</b>
       </span>
     : ''
   }

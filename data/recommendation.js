@@ -7,7 +7,7 @@ module.exports = {
     },
     washingtonTimes : {
       displayName: 'The Washington Times',
-      image: './images/washingtonTimes.png',
+      image: './images/unnamed.png',
       siteUrl : 'https://www.washingtontimes.com/'
     },
     americanConservative: {

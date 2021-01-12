@@ -1,9 +1,10 @@
 function calcScore(allSources){
   
   const leftWingSources = ['ABC News', 'Associated Press', 'Buzzfeed', 'Bloomberg', 'ABC News (AU)', 'CNN', 'CNN Spanish', 'Reddit /r/all', 
-                           'The Huffington Post', 'MSNBC', 'Newsweek', 'NBC News', 'Politico', 'Time', 'The Washington Times']
+                           'The Huffington Post', 'MSNBC', 'Newsweek', 'NBC News', 'Politico', 'Time', 'The Washington Times','The Daily Beast', 'Mother Jones']
 
-  const rightWingSources = ['Fox News', 'The American Conservative', 'The Wall Street Journal', 'National Review']
+  const rightWingSources = ['Fox News', 'The American Conservative', 'The Wall Street Journal', 'National Review', 'The Blaze',
+                            'The Epoch Times', 'Newsmax', 'The Daily Wire', 'OAN', 'The Federalist', 'The American Spectator', 'Washington Examiner']
 
   let scoreObj = {
     republican : {

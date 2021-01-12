@@ -9,10 +9,10 @@ const Recommendation = (props) => {
     recommendText = "Your media is well balanced!"
     fellInWhichWay = 'balanced'
   }else if (props.usersScore.democratic.score > props.usersScore.republican.score){
-    recommendText = "Your media sources fall more left than right we recommend the below sources:"
+    recommendText = "Your media sources fall more left than right we recommend the below sources"
     fellInWhichWay = 'left'
   }else{
-    recommendText = "Your media sources fall more right than left we recommend the below sources:"
+    recommendText = "Your media sources fall more right than left we recommend the below sources"
     fellInWhichWay = 'right'
   }
 
