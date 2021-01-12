@@ -5,6 +5,7 @@ import UsersSourceItem from '../components/UsersSourceItem.jsx';
 import calcScore from '../utilityFunctions/calcScore.js';
 import {getAllSources} from '../utilityFunctions/fetchAPI.js';
 import SearchListItem from '../components/SearchListItem';
+import Recommendation from '../components/Recomendation';
 import ScoreCard from '../components/ScoreCard';
 import { WorldMap } from "react-svg-worldmap";
 
@@ -45,7 +46,7 @@ const App = () => {
   }
 
   async function handleSearchResults(){
-    const searchDiv = document.getElementById("mainSearch")
+    const searchDiv = document.getElementById("mainSearchInput")
 
     if(searchDiv.value === ''){
       setSearchListItems([])
@@ -65,20 +66,17 @@ const App = () => {
     //   { country: "us", value: 331883986 }
     // ]
 
-  let countries = usersSources.map(source => source.country)
-  let countryArr = []
-  for(let i = 0; i < countries.length; i++){
-    console.log('hello')
-    countryArr.push({
-      country: countries[i],
-      color: 'blue',
-      value: 'yes'
-    })
-  }
-
-  countryArr = new Set(countryArr)
-  console.log(countryArr.size)
-  setUsersCountryCodes(countryArr)
+    let countries = usersSources.map(source => source.country)
+    let countryArr = []
+    for(let i = 0; i < countries.length; i++){
+      countryArr.push({
+        country: countries[i],
+        color: 'blue',
+        value: 'yes'
+      })
+    }
+    countryArr = new Set(countryArr)
+    setUsersCountryCodes(countryArr)
   }
 
   useEffect(() => {
@@ -95,31 +93,46 @@ const App = () => {
     return(
       <div id="main">
         <Header />
-        <div id="scoreCardContainer">   
-          {usersCountryCodes.size > 1 ?
-            <WorldMap color="blue" title={` Your news comes from ${usersCountryCodes.size} countries`} value-suffix="people" size="lg" data={usersCountryCodes}/>
-            :
-            <WorldMap color="blue" title={`Your news comes from ${usersCountryCodes.size} country`} value-suffix="people" size="lg" data={usersCountryCodes}/>
-          }
-          <ScoreCard currentScore={usersScore.democratic} partyName={'democratic'} partyImage='demo'/>
-          <ScoreCard currentScore={usersScore.republican} partyName={'republican'} partyImage='repub'/>
-          <ScoreCard currentScore={usersScore.uncategorized} partyName={'uncategorized'} partyImage='uncat'/>
+        <div id="scoreMain">
+          <div id="scoreCardContainer">   
+            <ScoreCard currentScore={usersScore.democratic} partyName={'democratic'} partyImage='demo'/>
+            <ScoreCard currentScore={usersScore.republican} partyName={'republican'} partyImage='repub'/>
+          </div>
+          <div className="countryAndCat">
+            <div>
+              <h3>{ `Where your news comes from` }</h3>
+              <WorldMap backgroundColor="#F8F8F8" color="blue" title='' value-suffix="people" size="lg" data={usersCountryCodes}/>
+            </div>
+            {usersScore.uncategorized.score > 0 ?
+              <div>
+                <h3>The rest of these news sources are uncategorized</h3>
+                <p>
+                  This does not mean they arent biased, it just means that we are unsure of their bias at this time
+                </p>
+                <span className="smallerFont">Because you chose:
+                  {usersScore.uncategorized.uncategorizedSources.join()}
+                </span>
+              </div>
+              :
+              ''
+            }
+          </div>
+          <Recommendation usersScore={usersScore} />
         </div>
-          <Footer />
       </div>
     )
   }else{
     return(
       <div id="main">
         <Header />
-          <div id="mainContainer">
-            <div id="mainSearchContainer">
+          <div id="homeMain">
+            <div>
             <h3>Search below to get started!</h3>
             <div id="searchBar">
-              <input type="text" className="mainSearch"
+              <input type="text" className="mainSearchInput"
                 placeholder="Ex: Fox News, CNN"
                 onChange={handleSearchResults}
-                id="mainSearch">
+                id="mainSearchInput">
               </input>
             </div>
             <div id="searchResultsContainer">

@@ -1,3 +1,4 @@
+//Global
 $siteFontFamily: Sans-Serif
 ::-webkit-scrollbar 
   width: 10px
@@ -22,6 +23,10 @@ a
   transition: color 0.2s ease
 a:hover
   color: black
+h1,h2,h3
+  color: #696969
+p 
+  max-width: 50rem
 button
   border: none
   background: #0070f3
@@ -30,6 +35,7 @@ button
   border-radius: 5px
   padding: 1rem
   transition: background 0.2s ease,color 0.2s ease,box-shadow 0.2s ease
+//Header
 #header
   display: flex
   justify-content: space-around
@@ -37,9 +43,11 @@ button
   color: gray
   font-weight: bold
   width: 100%
+  border-bottom: 1px solid #C0C0C0	
 .headerLogo
   height: 8rem
   width: 8rem
+//Home Page
 #main
   display: flex
   flex-direction: column
@@ -47,19 +55,19 @@ button
   align-items: center
   align-content: space-around
   justify-content: space-around
-#mainSearchContainer
+#homeMain
   display: flex
-  flex-direction: column
-  align-items: flex-start
+  height: 100vh
+  width: 100%
+  background-color: #F8F8F8	
   justify-content: center
   padding-top: 4rem
-  flex: 2
 #searchResultsContainer
   max-height: 20rem
   width: 20rem
   overflow: auto
   border-left: 1px solid #999
-#mainSearch
+#mainSearchInput
   border-radius: 8px
   border: 1px solid #999
   height: 2rem
@@ -68,6 +76,7 @@ button
   padding: .5rem
 #mainSearchBtn
   margin-top: 40px
+//Search Items
 .searchItem
   display: flex
   font-size: 1.5rem
@@ -93,19 +102,11 @@ button
   width: .15rem
   transition: transform .5s
 .searchItemBtn:hover
-   transform: rotate(90deg)
+   font-size: 2.5rem
 .searchCountry
   font-size: 1rem
   font-style: italic
-.usersSourceItem
-  color: black
-  border: 1px solid #999
-  border-radius: 30px
-  background: #0070f3
-  color: white
-.usersSourceItem:hover
-  background-color: #FF6347
-  border: 1px solid #ADD8E6
+//Users Sources
 #usersSourcesContainer
   display: flex
   justify-items: center
@@ -117,18 +118,81 @@ button
   min-width: 20rem
   flex-wrap: wrap
   margin-bottom: 20px
-  // border: 1px solid #eaeaea
   border-radius: 30px
   padding-left: 2rem
   padding-right: 2rem
   padding-bottom: 2rem
+.usersSourceItem
+  color: black
+  border: 1px solid #999
+  border-radius: 30px
+  background: #0070f3
+  color: white
+.usersSourceItem:hover
+  background-color: #FF6347
+  border: 1px solid #ADD8E6
 #usersSourcesMainContainer
   display: flex
   flex-direction: column
-  flex: 1
-  padding-top: 5rem
-  padding-left: 4rem
   align-items: center
+#commonSourcesContainer
+  margin-top: 2rem
+  display: flex
+  border: 1px solid #eaeaea
+  flex-direction: column
+  align-items: flex-start
+  min-height: 40rem
+  padding: 1rem
+.scoreCard
+  display: flex
+  flex-direction: column
+  padding: 1rem
+  border: 1px solid #606060	
+  border-radius: 5px
+  box-shadow: 1px 1px 1px #606060	
+  background-color: white
+.scoreTitleImage
+  display: flex
+  justify-content: space-around
+  align-items: center
+  border-bottom: 1px solid #eaeaea
+#scoreCardContainer
+  padding: 2rem
+  display: flex
+  justify-content: space-around
+  width: 100%
+.smallerFont
+  font-size: 1rem
+  padding: 1rem
+  font-style: italic
+  background-color: #ffffed
+.scorePara
+  min-height: 5rem
+.democraticHeader
+  color: blue
+.republicanHeader
+  color: red
+#uncatCard
+  padding: 3rem
+#scoreMain
+  width: 100%
+  display: flex
+  justify-content: center
+  flex-direction: column
+  background-color: #F8F8F8	
+.countryAndCat
+  display: flex
+  justify-content: space-around
+  align-items: center
+  padding: 1rem
+.recommendationContainer
+  display: flex
+  align-items: center
+  flex-direction: column
+.recommandationSubContainer
+  min-width: 20rem
+  display: flex
+  justify-content: space-between
 #footer
   display: flex
   justify-content: space-around
@@ -140,33 +204,3 @@ button
   position: fixed
   bottom: 0
   font-size: 1rem
-#commonSourcesContainer
-  margin-top: 2rem
-  display: flex
-  border: 1px solid #eaeaea
-  flex-direction: column
-  align-items: flex-start
-  min-height: 40rem
-  padding: 1rem
-#mainContainer
-  display: flex
-.scoreCard
-  display: flex
-  flex-direction: column
-  padding: 1rem
-.scoreTitleImage
-  display: flex
-  justify-content: space-around
-  align-items: center
-  border-bottom: 1px solid #eaeaea
-#scoreCardContainer
-  padding-top: 2rem
-  display: flex
-  align-items: center
-  justify-content: space-around
-  width: 100%
-.smallerFont
-  font-size: 1rem
-  padding: 1rem
-  font-style: italic
-  border-top: 1px solid #eaeaea

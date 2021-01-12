@@ -7,24 +7,27 @@ const ScoreCard = (props) => {
                  is one of the two major contemporary political parties in the United States \
                  along with its main, historic rival, the Democratic Party.",
     democratic: "The Democratic Party's philosophy of modern liberalism blends notions of civil liberty and social equality with support for a mixed economy.",
-    uncategorized : 'You are a true patriot'
+    uncategorized : 'These sources are uncategorized. This does not mean they arent biased, it just means that we are unsure of their bias at this time'
   }
 
   return(
-    <div className="scoreCard">
+    <div className='scoreCard'>
     <div className="scoreTitleImage">
-      <h3>{props.partyName.charAt(0).toUpperCase() + props.partyName.slice(1)}</h3>
+      <h3 className={`${props.partyName}Header`}>{props.partyName.charAt(0).toUpperCase() + props.partyName.slice(1)}</h3>
       <img src={`/images/${props.partyImage}.png`} />
     </div>
     <span>
       {props.currentScore.score}% of your media sources from {props.partyName} sources
     </span>
-    <p>
-      {partyDesc[props.partyName]}
-    </p>
-   <span className="smallerFont">Because you chose:
-    {props.currentScore[`${props.partyName}Sources`].join()}
-   </span>
+      <div className="scorePara">
+        <p>{partyDesc[props.partyName]}</p>
+      </div>
+    {props.currentScore[`${props.partyName}Sources`].length > 0 ? 
+      <span className="smallerFont">Because you chose:
+        {props.currentScore[`${props.partyName}Sources`].join()}
+      </span>
+    : ''
+  }
   </div>
   )
 }
