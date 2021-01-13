@@ -1,4 +1,4 @@
-const apiKey = process.env.apiKey
+const apiKey = PROCESS.ENV.NEXT_APP_apiKey
 console.log(process.env)
 async function fetchAPI(apiString) {
   let fetchResults = {}
