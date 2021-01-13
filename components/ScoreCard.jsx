@@ -22,9 +22,10 @@ const ScoreCard = (props) => {
         <p>{partyDesc[props.partyName]}</p>
       </div>
     {props.currentScore[`${props.partyName}Sources`].length > 0 ? 
-      <span className="smallerFont">Because you chose:
-        <b>{props.currentScore[`${props.partyName}Sources`].join()}</b>
-      </span>
+    <div className="smallerFont">
+      Because you chose:
+      <b>{props.currentScore[`${props.partyName}Sources`].join()}</b>
+    </div>
     : ''
   }
   </div>

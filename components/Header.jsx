@@ -6,7 +6,7 @@ const Header = (props) => {
       <a href="/">
         <img src="/images/logo.png" className="headerLogo"></img>
       </a>
-      <a href="/">About</a>
+      <a href="/About">About</a>
     </div>
   )
 }

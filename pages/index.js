@@ -88,14 +88,13 @@ const App = () => {
     }
 
     getSources()
-    console.log(allSources)
     return () => {return true}
   },[])
 
   if(userScoreShow){
     return(
  
-      <div id="main">
+      <>
         <Header />
         <div id="scoreMain">
           <div id="scoreCardContainer">   
@@ -113,9 +112,9 @@ const App = () => {
                 <p>
                   This does not mean they are unbiased just they we are unsure of their bias at this time.
                 </p>
-                <span className="smallerFont">Because you chose:
+                <div className="smallerFont">Because you chose:
                   <b>{usersScore.uncategorized.uncategorizedSources.join()}</b>
-                </span>
+                </div>
               </div>
               :
               ''
@@ -123,7 +122,8 @@ const App = () => {
           </div>
           <Recommendation usersScore={usersScore} />
         </div>
-      </div>
+        <Footer />
+      </>
 
     )
   }else{

@@ -1,4 +1,11 @@
-import { apiKey } from '../apiKey.js'
+// try{
+//   import { apiKey } from '../apiKey.js'
+// }catch(err){
+//   console.log('hello')
+//   apiKey = process.env.apiKey
+// }
+
+const apiKey = process.env.apiKey
 
 async function fetchAPI(apiString) {
   let fetchResults = {}
