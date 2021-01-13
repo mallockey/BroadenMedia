@@ -1,4 +1,4 @@
-const apiKey = process.env.NEXT_PUBLIC_apiKey.toString()
+const {apiKey} = require("../apiKey")
 async function fetchAPI(apiString) {
   let fetchResults = {}
   try{
