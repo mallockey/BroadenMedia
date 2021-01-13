@@ -1,5 +1,5 @@
 const apiKey = process.env.REACT_APP_apiKey
-console.log(apiKey,'hey there')
+console.log(process.env)
 async function fetchAPI(apiString) {
   let fetchResults = {}
   try{
