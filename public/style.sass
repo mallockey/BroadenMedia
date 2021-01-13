@@ -94,7 +94,6 @@ button
   border-radius: 30px
   padding-left: 2rem
   padding-right: 2rem
-  padding-bottom: 2rem
 .searchItem
   display: flex
   font-size: 1.5rem
@@ -103,11 +102,17 @@ button
   border-bottom: 1px solid #999
   align-items: center
   height: 4rem
-#searchResultsContainer
+.searchResultsContainer
   max-height: 20rem
   width: 20rem
   overflow: auto
   border-left: 1px solid #999
+  border-right: 1px solid #999
+  border-bottom: 1px solid #999
+.searchResultsContainerNoBorder
+  max-height: 20rem
+  width: 20rem
+  overflow: auto
 .usersSourceItem
   color: black
   border: 1px solid #999
@@ -164,6 +169,7 @@ button
   .searchItem
     height: 1.4rem
     font-size: 1rem
+    background-color: white
   #usersSourcesMainContainer
     max-height: 20rem
   #usersSourcesContainer
@@ -175,6 +181,9 @@ button
     padding: 1rem
   #aboutPara
     font-size: 1.5rem
+  .headerLogo
+    height: 4rem
+    width: 4rem
 #mainSearchBtn
   margin-top: 40px
 //Search Items

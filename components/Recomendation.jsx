@@ -5,15 +5,19 @@ const Recommendation = (props) => {
 
   let recommendText = ""
   let fellInWhichWay = null
-  if(props.usersScore.democratic.score === props.usersScore.republican.score){
+  if (props.usersScore.democratic.score === props.usersScore.republican.score && 
+      props.usersScore.democratic.score > 0 && 
+      props.usersScore.republican.score > 0){
     recommendText = "Your media is well balanced!"
     fellInWhichWay = 'balanced'
   }else if (props.usersScore.democratic.score > props.usersScore.republican.score){
     recommendText = "Your media sources fall more left than right we recommend the below sources"
     fellInWhichWay = 'left'
-  }else{
+  }else if(props.usersScore.democratic.score < props.usersScore.republican.score){
     recommendText = "Your media sources fall more right than left we recommend the below sources"
     fellInWhichWay = 'right'
+  }else{
+    recommendText = "There is not enough info to make a decision"
   }
 
   return(
@@ -29,14 +33,14 @@ const Recommendation = (props) => {
                   <img src={recObj.needsMoreRepub[sourceInfo].image} />
                 </a>
               )
-            }) : 
+            }) : fellInWhichWay === 'right' ?
               Object.keys(recObj.needsMoreDemo).map(sourceInfo => {
                 return (
                   <a key={Math.random()} href={recObj.needsMoreDemo[sourceInfo].siteUrl}>
                     <img src={recObj.needsMoreDemo[sourceInfo].image} />
                   </a>
                 )
-            }) }
+            }) : ''}
       </div>
     </div>
   )

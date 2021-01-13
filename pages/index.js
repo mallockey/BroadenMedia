@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer';
 import UsersSourceItem from '../components/UsersSourceItem.jsx';
@@ -17,6 +17,7 @@ const App = () => {
   const [usersScore, setUsersScore] = useState(0);
   const [usersSources, setUsersSources] = useState([])
   const [usersCountryCodes, setUsersCountryCodes] = useState([])
+  const searchContainerDiv = useRef(null)
 
   function addToResultsContainer(source){
 
@@ -31,6 +32,10 @@ const App = () => {
     if(!usersSourcesNames.includes(source.name)){
       setUsersSources([...usersSources,source])
     }
+
+    let searchInput = document.getElementById("mainSearchInput")
+    searchInput.focus()
+    
   }
 
   function removeFromResultsContainer(source){
@@ -48,12 +53,9 @@ const App = () => {
 
   async function handleSearchResults(){
     const searchDiv = document.getElementById("mainSearchInput")
-
-    if(searchDiv.value === ''){
-      setSearchListItems([])
-      return
+    if(searchDiv.value === ""){
+      setSearchListItems(null)
     }
-
     let searchResults = allSources.filter(source => source.name.toLowerCase().includes(searchDiv.value.toLowerCase()))
     setSearchListItems(searchResults)
   }
@@ -71,7 +73,6 @@ const App = () => {
       }else{
         countryObj[source.country].value.push(source.name)
       }
-
       countryObj[source.country].value.toString()
     })
 
@@ -85,10 +86,15 @@ const App = () => {
       temp = temp.concat(manualSources)
       setAllSources(temp)
     }
+
     
     getSources()
     return () => {return true}
   },[])
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [usersScore])
 
   if(userScoreShow){
     return(
@@ -111,18 +117,16 @@ const App = () => {
                   This does not mean they are unbiased just they we are unsure of their bias at this time.
                 </p>
                 <div className="smallerFont">Because you chose:
-                  <b>{usersScore.uncategorized.uncategorizedSources.join()}</b>
+                  <b> {usersScore.uncategorized.uncategorizedSources.join()}</b>
                 </div>
               </div>
-              :
-              ''
+              : ''
             }
           </div>
           <Recommendation usersScore={usersScore} />
         </div>
         <Footer />
       </>
-
     )
   }else{
     return(
@@ -139,7 +143,7 @@ const App = () => {
                 id="mainSearchInput">
               </input>
             </div>
-            <div id="searchResultsContainer">
+            <div id="searchResultsContainer" ref={searchContainerDiv} className={searchListItems.length > 0 ? 'searchResultsContainer' : 'searchResultsContainerNoBorder'}>
               {searchListItems ? searchListItems.map(source => {
                 return <SearchListItem source={source}
                         addToResultsContainer={addToResultsContainer}
