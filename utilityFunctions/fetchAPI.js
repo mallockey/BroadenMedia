@@ -1,4 +1,6 @@
-const {apiKey} = require("../apiKey")
+//1-13-21: This file is not in use because NewsAPI does not allow using their free API on deployed servers.
+// const {apiKey} = require("../apiKey")
+
 async function fetchAPI(apiString) {
   let fetchResults = {}
   try{

@@ -3,13 +3,12 @@ import Header from '../components/Header.jsx';
 import Footer from '../components/Footer';
 import UsersSourceItem from '../components/UsersSourceItem.jsx';
 import calcScore from '../utilityFunctions/calcScore.js';
-import {getAllSources} from '../utilityFunctions/fetchAPI.js';
 import SearchListItem from '../components/SearchListItem';
 import Recommendation from '../components/Recomendation';
 import ScoreCard from '../components/ScoreCard';
 import { WorldMap } from "react-svg-worldmap";
 import manualSources from '../data/manualSources';
-import Head from 'next/head'
+import newsApiSources from '../data/newsApiSources'
 
 const App = () => {
   const [allSources, setAllSources] = useState(0);
@@ -82,18 +81,17 @@ const App = () => {
   useEffect(() => {
 
     async function getSources(){
-      let temp = await getAllSources()
+      let temp = newsApiSources
       temp = temp.concat(manualSources)
       setAllSources(temp)
     }
-
+    
     getSources()
     return () => {return true}
   },[])
 
   if(userScoreShow){
     return(
- 
       <>
         <Header />
         <div id="scoreMain">
