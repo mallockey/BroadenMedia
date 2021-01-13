@@ -19,12 +19,15 @@ const ScoreCard = (props) => {
       {props.currentScore.score}% of your media sources come from {props.partyName} sources
     </span>
       <div className="scorePara">
-        <p>{partyDesc[props.partyName]}</p>
+        <p>{partyDesc[props.partyName]}
+        <br></br><i className="removeSpan">From Wikipedia</i>
+        
+        </p>
       </div>
     {props.currentScore[`${props.partyName}Sources`].length > 0 ? 
     <div className="smallerFont">
       Because you chose:
-      <b>{props.currentScore[`${props.partyName}Sources`].join()}</b>
+      <b> {props.currentScore[`${props.partyName}Sources`].join()}</b>
     </div>
     : ''
   }
