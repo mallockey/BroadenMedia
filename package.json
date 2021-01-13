@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "buildcss": "sass --watch ./public/style.sass:./public/style.css",
-    "start": "next start"
+    "start": "next start -p $PORT"
   },
   "dependencies": {
     "next": "^10.0.0",
