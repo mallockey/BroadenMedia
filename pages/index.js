@@ -34,6 +34,7 @@ const App = () => {
     }
 
     let searchInput = document.getElementById("mainSearchInput")
+    searchInput.value = ""
     searchInput.focus()
     
   }
