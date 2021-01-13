@@ -4,6 +4,6 @@ if (process.env.NODE_ENV === 'development') {
 
 module.exports = {
   env: {
-    API_URL: process.env.apiKey,
+    apiKey: process.env.apiKey,
   }
 }
