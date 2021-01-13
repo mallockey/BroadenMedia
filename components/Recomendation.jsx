@@ -17,7 +17,7 @@ const Recommendation = (props) => {
     recommendText = "Your media sources fall more right than left we recommend the below sources"
     fellInWhichWay = 'right'
   }else{
-    recommendText = "There is not enough info to make a decision"
+    recommendText = "There is not enough info to make a recommendation"
   }
 
   return(
