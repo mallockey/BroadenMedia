@@ -1,4 +1,4 @@
-const apiKey = process.env.REACT_APP_apiKey
+const apiKey = process.env.apiKey
 console.log(process.env)
 async function fetchAPI(apiString) {
   let fetchResults = {}
