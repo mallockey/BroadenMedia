@@ -10,6 +10,11 @@
   background: #888;
 }
 
+#aboutPara {
+  font-size: 2rem;
+  text-align: center;
+}
+
 html {
   height: 100%;
 }
@@ -126,6 +131,16 @@ button {
   padding-bottom: 2rem;
 }
 
+.searchItem {
+  display: flex;
+  font-size: 1.5rem;
+  padding: 1rem;
+  justify-content: space-between;
+  border-bottom: 1px solid #999;
+  align-items: center;
+  height: 4rem;
+}
+
 #searchResultsContainer {
   max-height: 20rem;
   width: 20rem;
@@ -212,6 +227,11 @@ button {
     width: 5rem;
   }
 
+  .searchItem {
+    height: 1rem;
+    font-size: 1rem;
+  }
+
   #usersSourcesMainContainer {
     max-height: 20rem;
   }
@@ -226,19 +246,13 @@ button {
     width: auto;
     padding: 1rem;
   }
+
+  #aboutPara {
+    font-size: 1.5rem;
+  }
 }
 #mainSearchBtn {
   margin-top: 40px;
-}
-
-.searchItem {
-  display: flex;
-  font-size: 1.5rem;
-  padding: 1rem;
-  justify-content: space-between;
-  border-bottom: 1px solid #999;
-  align-items: center;
-  height: 4rem;
 }
 
 .searchItem:hover {
@@ -355,11 +369,6 @@ button {
   flex-shrink: 0;
   bottom: 0;
   font-size: 1rem;
-}
-
-#aboutPara {
-  font-size: 2rem;
-  text-align: center;
 }
 
 #aboutLink {
