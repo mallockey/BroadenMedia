@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import Head from 'next/head'
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer';
 import UsersSourceItem from '../components/UsersSourceItem.jsx';
@@ -132,6 +133,17 @@ const App = () => {
   }else{
     return(
       <>
+      <Head>
+        <title>Broaden MEdia</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <meta property="og:title" content="BroadenMEdia" />
+        <meta property="og:image" content="/images/pageImage.jpg" />
+        <meta property="og:url" content="https://broadenmedia.vercel.app/" />
+        <meta
+          property="og:description"
+          content="A news source aggregator where users can input their news sources and are given a breakdown of each source by political affiliation."
+        />
+      </Head>
       <div id="main">
         <Header />
           <div id="homeMain">
