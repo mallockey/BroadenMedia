@@ -137,7 +137,7 @@ const App = () => {
         <title>Broaden MEdia</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <meta property="og:title" content="BroadenMEdia" />
-        <meta property="og:image" content="/images/pageImage.jpg" />
+        <meta property="og:image" content="/images/pageImage.png" />
         <meta property="og:url" content="https://broadenmedia.vercel.app/" />
         <meta
           property="og:description"
