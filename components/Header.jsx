@@ -3,10 +3,17 @@ import React from 'react'
 const Header = (props) => {
   return(
     <div id="header">
-      <a href="/">
-        <img src="/images/logo.png" className="headerLogo"></img>
-      </a>
-      <a href="/About">About</a>
+      <div className="header-item">
+        <a href="/">
+          <img
+            id="site-logo"
+            src="/images/logo-white.png"
+          />
+        </a>
+      </div>
+      <div className="header-item">
+        <a href="/About">About</a>
+      </div>
     </div>
   )
 }
