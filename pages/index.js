@@ -120,20 +120,18 @@ const App = () => {
             />
           </div>
           <div className="countryAndCat">
-            <div>
+            <div className="mapContainer">
               <h3>{`Your news comes from ${usersCountryCodes.length} ${
                 usersCountryCodes.length === 1 ? 'country' : 'countries'
               }`}
               </h3>
               <WorldMap
-                backgroundColor="#f8f8f8"
-                color="green"
-                title=""
-                valuePrefix=": "
+                id="map"
+                backgroundColor="rgb(255, 255, 255)"
+                color="rgb(0, 151, 0)"
                 size="xl"
                 data={usersCountryCodes}
                 frame={false}
-                frameColor="#d34120"
               />
             </div>
             {usersScore.uncategorized.score > 0 ? (
