@@ -109,7 +109,7 @@
   border-radius: 1rem;
   padding: 1rem;
   height: 40vh;
-  width: 30vw;
+  width: 32vw;
   overflow: auto;
 }
 
@@ -238,7 +238,7 @@
   border-radius: 1rem;
   background-color: #d34120;
   color: white;
-  max-width: 8rem;
+  max-width: 7rem;
   margin: 0.5rem;
   outline: none;
   box-shadow: none;
@@ -339,6 +339,18 @@
   margin-top: 1rem;
 }
 
+.uncatScorePara {
+  margin-top: 1rem;
+  background-color: #0f132b;
+  border: 1px solid #d34120;
+  border-radius: 1rem;
+  max-width: 40rem;
+  padding-top: 3rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-bottom: 6rem;
+}
+
 @font-face {
   font-family: "nunitoregular";
   src: url("/fonts/nunito-regular.woff");
@@ -357,7 +369,6 @@
 }
 .countryAndCat {
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   text-align: center;
@@ -374,10 +385,6 @@
 
 .republicanHeader {
   color: red;
-}
-
-#uncatCard {
-  padding: 3rem;
 }
 
 @font-face {
@@ -414,6 +421,9 @@
   align-items: center;
   height: 10rem;
   width: auto;
+  background-color: #0f132b;
+  border: 1px solid #d34120;
+  border-radius: 1rem;
 }
 .recommandationSubContainer img {
   height: 5rem;

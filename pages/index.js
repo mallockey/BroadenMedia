@@ -127,17 +127,17 @@ const App = () => {
               </h3>
               <WorldMap
                 backgroundColor="#f8f8f8"
-                color="blue"
+                color="green"
                 title=""
                 valuePrefix=": "
-                size="lg"
+                size="xl"
                 data={usersCountryCodes}
-                frame={true}
+                frame={false}
                 frameColor="#d34120"
               />
             </div>
             {usersScore.uncategorized.score > 0 ? (
-              <div className="scorePara">
+              <div className="uncatScorePara">
                 <h3>The rest of these news sources are uncategorized</h3>
                 <p>
                   This does not mean they are unbiased but that they we are unsure

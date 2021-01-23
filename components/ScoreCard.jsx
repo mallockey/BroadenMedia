@@ -21,7 +21,6 @@ const ScoreCard = (props) => {
       <div className="scorePara">
         <p>{partyDesc[props.partyName]}
         <br /><i className="removeSpan">From Wikipedia</i>
-
         </p>
       </div>
     {props.currentScore[`${props.partyName}Sources`].length > 0 ?

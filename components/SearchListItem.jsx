@@ -3,7 +3,8 @@ import countryCodeMap from '../data/countryCodes';
 
 const SearchListItem = (props) => {
   return (
-    <div className="searchItem">
+    <div className="searchItem" onClick={() =>
+      props.addToResultsContainer(props.source)}>
       <div>
         {props.source.name}
         <br />
