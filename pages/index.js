@@ -126,14 +126,14 @@ const App = () => {
               }`}
               </h3>
               <WorldMap
-                backgroundColor="#F8F8F8"
+                backgroundColor="#f8f8f8"
                 color="blue"
                 title=""
                 valuePrefix=": "
-                size="lg"
+                size="xlg"
                 data={usersCountryCodes}
                 frame={true}
-                frameColor="#C0C0C0"
+                frameColor="#d34120"
               />
             </div>
             {usersScore.uncategorized.score > 0 ? (
@@ -183,7 +183,7 @@ const App = () => {
                 <input
                   type="text"
                   className="mainSearchInput"
-                  placeholder="Ex: Fox News, CNN"
+                  placeholder="Ex: ABC News, CNN"
                   onChange={handleSearchResults}
                   id="mainSearchInput"
                 />

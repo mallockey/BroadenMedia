@@ -1,29 +1,31 @@
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import countryCodeMap from '../data/countryCodes';
 
 const UsersSourceItem = (props) => {
-  const [hover, setHover] = useState(false)
+  const [hover, setHover] = useState(false);
 
   function handleOnHover(){
-    setHover(!hover)
+    setHover(!hover);
   }
-  return(
+  return (
     <>
     {hover ?
-      <button type="button"
-        className="usersSourceItem"
-        onMouseLeave={
-          handleOnHover
-        }
+        <button
+          type="button"
+          className="usersSourceItem"
+          onMouseLeave={
+            handleOnHover
+          }
         onClick={() =>
           props.removeFromResultsContainer(props.source.name)}
           >
         {props.source.name}
-        <br></br>
-      <span className="removeSpan">Click to remove</span>
-      </button>
+        <br />
+        <span className="removeSpan">Click to remove</span>
+        </button>
     :
-      <button type="button"
+      <button
+        type="button"
         className="usersSourceItem"
         onMouseOver={
           handleOnHover
@@ -32,12 +34,12 @@ const UsersSourceItem = (props) => {
           props.removeFromResultsContainer(props.source.name)}
         >
         {props.source.name}
-        <br></br>
+        <br />
         <span className="removeSpan">{countryCodeMap[props.source.country.toUpperCase()]}</span>
       </button>
     }
     </>
-  )
-}
+  );
+};
 
 export default UsersSourceItem;

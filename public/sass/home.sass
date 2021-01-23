@@ -4,16 +4,19 @@
   background-color: $background-color
   display: flex
   flex-direction: column
-  width: auto
+  width: 100vw
   height: 100vh
+  position: absolute
 
 #homeMain
   display: flex
-  height: 100%
-  width: 100%
+  height: 100vh
+  width: 100vw
   justify-content: space-around
   align-items: center
-  margin-top: -5rem
+  position: relative
+  padding-bottom: 4rem
+  padding-top: 2rem
 
 
 .searchSection
@@ -31,14 +34,24 @@
   width: 12rem
 
 #searchBar
-  input
-    width: 100%
-    margin-bottom: 2rem
+  #mainSearchInput
+    width: 28vw
+    height: 2rem
+    border: 2px solid $main-link-color
+    border-radius: .6rem
+    padding: .5rem
+    font-family: $thin-font
+    font-size: 1.25rem
 
-  input::placeholder
+  #mainSearchInput::placeholder
     font-family: $regular-font
     color: $main-link-hover-color
     opacity: .25
+
+  #mainSearchInput:focus
+    outline: none
+    box-shadow: none
+    padding-left: .5rem
 
 .searchItem
   color: $main-text-color
@@ -63,3 +76,4 @@
     padding: 1rem
     height: 40vh
     width: 30vw
+    overflow: auto

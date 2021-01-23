@@ -1,52 +1,55 @@
 @import sass/main
 
-#scoreCardContainer
-  padding: 2rem
-  display: flex
-  justify-content: space-around
-  width: 100%
-.scoreCard
-  display: flex
-  flex-direction: column
-  padding: 1rem
-  border: 1px solid #C0C0C0
-  border-radius: 5px
-  background-color: white
-
-.searchItem
-  display: flex
-  font-size: 1.5rem
-  padding: 1rem
-  justify-content: space-between
-  border-bottom: 1px solid #999
-  align-items: center
-  height: 4rem
-.searchResultsContainer
-  max-height: 20rem
-  width: 20rem
-  overflow: auto
-  border-left: 1px solid #999
-  border-right: 1px solid #999
-  border-bottom: 1px solid #999
-.searchResultsContainerNoBorder
-  max-height: 20rem
-  width: 20rem
-  overflow: auto
-.usersSourceItem
-  color: black
-  border: 1px solid #999
-  border-radius: 30px
-  background: #0070f3
-  color: white
-#mainSearchInput
-  border-radius: 8px
-  border: 1px solid #999
-  height: 2rem
-  width: 20rem
-  font-size: 1.5rem
-  padding: .5rem
-.smallerFont
-  font-size: 1rem
-  padding: 1rem
-  font-style: italic
-  background-color: #ffffed
+@media (max-width: 768px)
+  #homeMain
+    flex-direction: column-reverse
+    align-content: center
+    align-items: center
+    justify-content: flex-end
+  #searchResultsContainer
+    // max-height: 10rem
+    width: 15rem
+  #scoreCardContainer
+    background-color: #F8F8F8
+    flex-direction: column
+    align-self: center
+    max-width: 30rem
+    padding: 0
+    width: 100%
+    border-bottom: 1px solid #999
+  .scoreCard
+    margin-top: 2rem
+    border: none
+    padding: 0
+    width: 100%
+    margin-bottom: 2rem
+  body
+    font-size: 1rem
+  .countryAndCat
+    flex-direction: column
+  .usersSourceItem
+    padding: .5rem
+  #mainSearchBtn
+    margin-bottom: 4rem
+  #mainSearchInput
+    width: 15rem
+  #searchBar
+    width: 5rem
+  .searchItem
+    height: 1.4rem
+    font-size: 1rem
+    background-color: white
+  #usersSourcesMainContainer
+    max-height: 20rem
+  #usersSourcesContainer
+    padding-left: 0
+    padding-right: 0
+  .smallerFont
+    height: auto
+    width: auto
+    padding: 1rem
+  #aboutPara
+    font-size: 1.5rem
+  .headerLogo
+    height: 4rem
+    width: 4rem
