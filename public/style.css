@@ -172,10 +172,14 @@
   font-family: "nunitolight_italic";
   src: url("/fonts/nunito-lightitalic.woff");
 }
-#searchResultsContainer {
+.searchResultsContainer {
   position: relative;
   overflow: auto;
   min-height: 10rem;
+}
+
+.searchResultsContainerMin {
+  min-height: 0;
 }
 
 .searchItem {
