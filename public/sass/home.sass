@@ -4,56 +4,62 @@
   background-color: $background-color
   display: flex
   flex-direction: column
-  width: 100vw
+  width: auto
   height: 100vh
 
 #homeMain
   display: flex
-  height: 100vh
-  width: 100vw
-  justify-content: space-evenly
+  height: 100%
+  width: 100%
+  justify-content: space-around
   align-items: center
+  margin-top: -5rem
+
 
 .searchSection
   display: flex
   flex-direction: column
   justify-content: space-evenly
   align-items: left
-  padding-bottom: 2rem
+  height: 30vh
 
   h3
-    font-weight: bold
-    font-size: 1.5rem
+    font-family: $thin-font
+    font-size: x-large
 
-  #mainSearchBtn
-    width: 12rem
+#mainSearchBtn
+  width: 12rem
 
-  #searchBar
-    input
-      width: 30rem
-      margin-bottom: 2rem
+#searchBar
+  input
+    width: 100%
+    margin-bottom: 2rem
 
-    input::placeholder
-      color: $header-background-color
-      opacity: .25
+  input::placeholder
+    font-family: $regular-font
+    color: $main-link-hover-color
+    opacity: .25
 
-  .searchItem
-    color: $main-text-color
-    height: 1.5rem
-    font-size: 1rem
-    background-color: $header-background-color
+.searchItem
+  color: $main-text-color
+  height: 1.5rem
+  font-size: 1rem
+  background-color: $header-background-color
 
 #usersSourcesMainContainer
+  font-family: $thin-font
+  font-size: large
   display: flex
   flex-direction: column
-  justify-content: space-evenly
+  justify-content: space-around
   align-items: left
+  margin-left: -1rem
 
-#usersSourcesContainer
-  height: 30rem
-  width: 30rem
-  border: 1px solid $main-link-color
-  background-color: $header-background-color
-  border-radius: 1rem
-  color: $main-text-color
-  padding: 1rem
+  #usersSourcesContainer
+    background-color: $header-background-color
+    color: $main-text-color
+    border: 1px solid $main-link-color
+    border-radius: 1rem
+    padding: 1rem
+    height: 40vh
+    width: 30vw

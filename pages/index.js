@@ -63,8 +63,7 @@ const App = () => {
       setSearchListItems(null);
     }
     let searchResults = allSources.filter((source) =>
-      source.name.toLowerCase().includes(searchDiv.value.toLowerCase())
-    );
+      source.name.toLowerCase().includes(searchDiv.value.toLowerCase()));
     setSearchListItems(searchResults);
   }
 
@@ -124,7 +123,8 @@ const App = () => {
             <div>
               <h3>{`Your news comes from ${usersCountryCodes.length} ${
                 usersCountryCodes.length === 1 ? 'country' : 'countries'
-              }`}</h3>
+              }`}
+              </h3>
               <WorldMap
                 backgroundColor="#F8F8F8"
                 color="blue"
@@ -145,7 +145,7 @@ const App = () => {
                 </p>
                 <div className="smallerFont">
                   Because you chose:
-                  <b> {usersScore.uncategorized.uncategorizedSources.join()}</b>
+                  <strong>{usersScore.uncategorized.uncategorizedSources.join()}</strong>
                 </div>
               </div>
             ) : (
