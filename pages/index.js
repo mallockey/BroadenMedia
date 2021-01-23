@@ -130,7 +130,7 @@ const App = () => {
                 color="blue"
                 title=""
                 valuePrefix=": "
-                size="xlg"
+                size="lg"
                 data={usersCountryCodes}
                 frame={true}
                 frameColor="#d34120"
@@ -140,11 +140,11 @@ const App = () => {
               <div className="scorePara">
                 <h3>The rest of these news sources are uncategorized</h3>
                 <p>
-                  This does not mean they are unbiased just they we are unsure
+                  This does not mean they are unbiased but that they we are unsure
                   of their bias at this time.
                 </p>
                 <div className="smallerFont">
-                  Because you chose:
+                  Because you chose:{' '}
                   <strong>{usersScore.uncategorized.uncategorizedSources.join()}</strong>
                 </div>
               </div>
