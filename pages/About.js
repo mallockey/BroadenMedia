@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 
 const About = () => {
   return (
+    <>
     <div id="aboutMain">
       <Header />
       <div id="aboutCenter">
@@ -18,8 +19,9 @@ const About = () => {
           </a>
         </p>
       </div>
-      <Footer />
     </div>
+      <Footer />
+    </>
   );
 };
 

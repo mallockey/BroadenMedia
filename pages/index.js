@@ -106,6 +106,7 @@ const App = () => {
   if (userScoreShow) {
     return (
       <>
+      <div id="main">
         <Header />
         <div id="scoreMain">
           <div id="scoreCardContainer">
@@ -152,6 +153,7 @@ const App = () => {
             )}
           </div>
           <Recommendation usersScore={usersScore} />
+        </div>
         </div>
         <Footer />
       </>
@@ -243,8 +245,8 @@ const App = () => {
               </div>
             </div>
           </div>
-          <Footer />
         </div>
+          <Footer />
       </>
     );
   }

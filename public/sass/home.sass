@@ -4,13 +4,11 @@
   background-color: $background-color
   display: flex
   flex-direction: column
-  justify-content: space-around
   width: 100vw
-  height: auto
+  flex: 1 0 auto
 
   #homeMain
     display: flex
-    height: auto
     width: 100vw
     justify-content: space-evenly
     align-items: left
@@ -94,11 +92,12 @@
     width: 100%
 
   .searchSection
+    margin-top: 2rem
     width: 90%
     margin-bottom: 1rem
     position: relative
-    overflow: auto
     height: auto
+    min-height: 19rem
     margin-left: 1rem
     padding-left: 1rem
 
