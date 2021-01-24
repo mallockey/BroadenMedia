@@ -5,9 +5,13 @@
   color: $main-text-color
   display: flex
   height: auto
-  justify-content: space-around
+  justify-content: space-evenly
   align-items: center
   padding: 1rem
+  position: relative
+  top: 0
+  left: 0
+
 
 .header-item
   height: auto
@@ -20,4 +24,8 @@
 #site-logo
   height: 7rem
 
-// @media screen and (max-width: $small)
+@media screen and (max-width: $small)
+  #header
+    position: relative
+    top: 0
+    left: 0

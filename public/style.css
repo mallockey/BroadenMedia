@@ -36,15 +36,14 @@
   flex-direction: column;
   justify-content: space-around;
   width: 100vw;
-  height: 100vh;
+  height: auto;
 }
 #main #homeMain {
   display: flex;
-  height: 100vh;
+  height: auto;
   width: 100vw;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: left;
-  position: sticky;
   margin-bottom: 4rem;
   margin-top: 1rem;
 }
@@ -110,7 +109,7 @@
   flex-wrap: wrap;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   #main {
     width: 100%;
     height: auto;
@@ -128,7 +127,7 @@
   }
 
   .searchSection {
-    width: 100vw;
+    width: 90%;
     margin-bottom: 1rem;
     position: relative;
     overflow: auto;
@@ -175,9 +174,12 @@
   color: #faf4df;
   display: flex;
   height: auto;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   padding: 1rem;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 .header-item {
@@ -193,6 +195,13 @@
   height: 7rem;
 }
 
+@media screen and (max-width: 600px) {
+  #header {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+}
 @font-face {
   font-family: "nunitoregular";
   src: url("/fonts/nunito-regular.woff");
@@ -212,7 +221,7 @@
 .searchResultsContainer {
   overflow: auto;
   max-width: 28vw;
-  max-height: 20rem;
+  max-height: 13rem;
 }
 .searchResultsContainer .searchResultsContainerMin {
   min-height: 0;
@@ -264,10 +273,10 @@
   opacity: 0.75;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .searchResultsContainer {
     height: 30vh;
-    max-width: 100vw;
+    max-width: 95vw;
   }
   .searchResultsContainer .searchItem {
     background-color: #fc4920;
@@ -279,6 +288,10 @@
     align-items: center;
     height: 2rem;
     width: 78%;
+  }
+  .searchResultsContainer .searchItem button {
+    background-color: #862914;
+    color: #faf4df;
   }
   .searchResultsContainer .searchItem .searchItemBtn {
     background-color: #fc4920;
@@ -338,7 +351,7 @@
   font-family: "nunitolight_italic";
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .usersSourceItem {
     max-width: 7rem;
   }
@@ -379,7 +392,7 @@
   flex-direction: column;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   #footer {
     display: flex;
     justify-content: space-around;
@@ -420,7 +433,7 @@
 
 #scoreCardContainer {
   height: auto;
-  width: 100%;
+  width: 95%;
   display: flex;
   align-items: center;
   color: #faf4df;
@@ -467,7 +480,7 @@
   padding-bottom: 4rem;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   #scoreMain {
     display: flex;
     flex-direction: column;
@@ -544,7 +557,7 @@
   font-size: xx-large;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .countryAndCat {
     display: flex;
     flex-direction: column;
@@ -603,7 +616,7 @@
   margin: 1rem;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .recommendationContainer {
     width: 83%;
     margin: 1rem 1rem 1rem 1rem;
@@ -660,12 +673,17 @@
   padding: 2rem;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   #aboutPara {
     height: auto;
   }
 }
+#__next {
+  width: 100%;
+}
+
 body {
+  width: 100%;
   font-family: "nunitoregular";
   font-size: 1rem;
   margin: 0;

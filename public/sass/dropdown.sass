@@ -3,7 +3,7 @@
 .searchResultsContainer
   overflow: auto
   max-width: 28vw
-  max-height: 20rem
+  max-height: 13rem
 
   .searchResultsContainerMin
     min-height: 0
@@ -56,7 +56,7 @@
 @media screen and (max-width: $small)
   .searchResultsContainer
     height: 30vh
-    max-width: 100vw
+    max-width: 95vw
 
     .searchItem
       background-color: $main-link-color
@@ -68,6 +68,10 @@
       align-items: center
       height: 2rem
       width: 78%
+
+      button
+        background-color: $main-link-hover-color
+        color: $main-text-color
 
       .searchItemBtn
         background-color: $main-link-color
