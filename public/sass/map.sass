@@ -17,16 +17,29 @@
   border-radius: 1rem
   padding: 1.5rem
   background-color: $header-background-color
-  max-width: 42%
 
 .democraticHeader
   color: #0000FF
-  text-shadow: 2px 2px #202027
+  text-shadow: 2px 2px #181824
   font-family: $bold-font
   font-size: xx-large
 
 .republicanHeader
   color: red
-  text-shadow: 2px 2px #31313c
+  text-shadow: 2px 2px #2c1919
   font-family: $bold-font
   font-size: xx-large
+
+@media screen and (max-width: $small)
+  .countryAndCat
+    display: flex
+    flex-direction: column
+    padding-left: 0
+
+  .mapContainer
+    width: 90%
+    padding-left: .15rem
+    padding-right: .15rem
+    padding-bottom: 1rem
+    text-align: center
+

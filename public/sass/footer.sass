@@ -17,3 +17,16 @@
 .footerSources
   display: flex
   flex-direction: column
+
+@media screen and (max-width: $small)
+  #footer
+    display: flex
+    justify-content: space-around
+    padding-left: 1rem
+
+  .footerSources
+    width: 50%
+
+  .legal
+    width: 50%
+    text-align: center

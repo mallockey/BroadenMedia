@@ -58,13 +58,14 @@ const App = () => {
   }
 
   async function handleSearchResults() {
-    const searchDiv = document.getElementById('mainSearchInput');
+    const searchDiv = document.getElementById("mainSearchInput");
     if (searchDiv.value === '') {
-      setSearchListItems(null);
+      setSearchListItems([]);
+      return
     }
     let searchResults = allSources.filter((source) =>
       source.name.toLowerCase().includes(searchDiv.value.toLowerCase()));
-    setSearchListItems(searchResults);
+      setSearchListItems(searchResults);
   }
 
   function getCountryCodes() {
@@ -127,8 +128,8 @@ const App = () => {
               </h3>
               <WorldMap
                 id="map"
-                backgroundColor="rgb(255, 255, 255)"
-                color="rgb(0, 151, 0)"
+                backgroundColor="rgb(255, 255, 255, 0.75)"
+                color="rgb(0, 95, 0)"
                 size="xl"
                 data={usersCountryCodes}
                 frame={false}
@@ -187,13 +188,9 @@ const App = () => {
                 />
               </div>
               <div
-                id="searchResultsContainer"
                 ref={searchContainerDiv}
-                className={
-                  searchListItems.length > 0
-                    ? 'searchResultsContainer'
-                    : 'searchResultsContainerNoBorder'
-                }
+                className={searchListItems.length ? 'searchResultsContainer' : 'searchResultsContainerMin'}
+                id="searchResultsContainerID"
               >
                 {searchListItems
                   ? searchListItems.map((source) => {

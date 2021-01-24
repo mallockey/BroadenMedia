@@ -34,39 +34,32 @@
   background-color: #090a15;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   width: 100vw;
   height: 100vh;
-  position: absolute;
 }
-
-#homeMain {
+#main #homeMain {
   display: flex;
   height: 100vh;
   width: 100vw;
   justify-content: space-around;
-  align-items: center;
-  position: relative;
-  padding-bottom: 4rem;
-  padding-top: 2rem;
+  align-items: left;
+  position: sticky;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
 }
-
-.searchSection {
+#main .searchSection {
+  font-family: "nunitolight";
+  font-size: large;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: left;
-  height: 30vh;
+  justify-content: center;
 }
-.searchSection h3 {
-  font-family: "nunitolight";
-  font-size: x-large;
+#main .searchSection #searchBar {
+  width: 32vw;
 }
-
-#mainSearchBtn {
-  width: 12rem;
-}
-
-#searchBar #mainSearchInput {
+#main #mainSearchInput {
   width: 28vw;
   height: 2rem;
   border: 2px solid #fc4920;
@@ -75,22 +68,24 @@
   font-family: "nunitolight";
   font-size: 1.25rem;
 }
-#searchBar #mainSearchInput::placeholder {
+#main #mainSearchInput::placeholder {
   font-family: "nunitoregular";
   color: #862914;
   opacity: 0.25;
 }
-#searchBar #mainSearchInput:focus {
+#main #mainSearchInput:focus {
   outline: none;
   box-shadow: none;
   padding-left: 0.5rem;
 }
-
-.searchItem {
+#main #mainSearchBtn {
+  width: 12rem;
+  margin-top: 1rem;
+  color: #050c26;
+}
+#main #mainSearchBtn:hover {
+  background-color: #862914;
   color: #faf4df;
-  height: 1.5rem;
-  font-size: 1rem;
-  background-color: #050c26;
 }
 
 #usersSourcesMainContainer {
@@ -111,12 +106,52 @@
   height: 40vh;
   width: 32vw;
   overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 400px) {
+  #main {
+    width: 100%;
+    height: auto;
+  }
+
   #homeMain {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "nunitolight";
+    padding-top: 0;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .searchSection {
+    width: 100vw;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: auto;
+    height: auto;
+    margin-left: 1rem;
+    padding-left: 1rem;
+  }
+
+  .mainSearchInput {
+    min-width: 20rem;
+  }
+
+  #usersSourcesMainContainer {
+    margin-left: 0;
+    margin-top: 3rem;
+    height: auto;
+    width: 100%;
+    text-align: center;
+  }
+  #usersSourcesMainContainer #usersSourcesContainer {
+    width: 83%;
+    height: 50vh;
+    margin-left: 1rem;
   }
 }
 @font-face {
@@ -139,14 +174,10 @@
   background-color: #050c26;
   color: #faf4df;
   display: flex;
-  width: auto;
   height: auto;
   justify-content: space-around;
   align-items: center;
   padding: 1rem;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 
 .header-item {
@@ -178,34 +209,47 @@
   font-family: "nunitolight_italic";
   src: url("/fonts/nunito-lightitalic.woff");
 }
-#searchResultsContainer {
-  position: relative;
+.searchResultsContainer {
   overflow: auto;
-  min-height: 10rem;
+  max-width: 28vw;
+  max-height: 20rem;
 }
-
-.searchItem {
+.searchResultsContainer .searchResultsContainerMin {
+  min-height: 0;
+}
+.searchResultsContainer .searchItem {
   display: flex;
   font-size: 1.2rem;
   padding: 1rem;
   justify-content: space-between;
   border-bottom: 1px solid #faf4df;
   align-items: center;
-  height: 3rem;
+  height: 2.5rem;
   margin-left: 0.5rem;
-  margin-right: 0.5rem;
   background-color: #fc4920;
+  color: #050c26;
+  width: 25vw;
+}
+.searchResultsContainer button {
+  color: #050c26;
+  background-color: #fc4920;
+  outline: none;
+  box-shadow: none;
 }
 
 .searchItem:hover {
   background-color: #862914;
+  color: #faf4df;
+}
+.searchItem:hover button {
+  background-color: #862914;
+  color: #faf4df;
 }
 .searchItem:hover .searchItemBtn {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: none;
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: center;
   height: 0.15rem;
   width: 0.15rem;
@@ -220,6 +264,49 @@
   opacity: 0.75;
 }
 
+@media screen and (max-width: 400px) {
+  .searchResultsContainer {
+    height: 30vh;
+    max-width: 100vw;
+  }
+  .searchResultsContainer .searchItem {
+    background-color: #fc4920;
+    border-bottom: 1px solid #050c26;
+    display: flex;
+    font-size: 1.2rem;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    height: 2rem;
+    width: 78%;
+  }
+  .searchResultsContainer .searchItem .searchItemBtn {
+    background-color: #fc4920;
+    color: #050c26;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    height: 0.15rem;
+    width: 0.15rem;
+    outline: none;
+    box-shadow: none;
+  }
+  .searchResultsContainer .searchItem:active {
+    background-color: #862914;
+    color: #faf4df;
+  }
+  .searchResultsContainer .searchItem:active button {
+    background-color: #862914;
+    color: #faf4df;
+  }
+
+  .searchCountry {
+    font-size: 1rem;
+    font-style: italic;
+    opacity: 0.75;
+  }
+}
 @font-face {
   font-family: "nunitoregular";
   src: url("/fonts/nunito-regular.woff");
@@ -240,16 +327,22 @@
   border-radius: 1rem;
   background-color: #fc4920;
   color: white;
-  max-width: 7rem;
+  max-width: 8rem;
   margin: 0.5rem;
   outline: none;
   box-shadow: none;
+  max-height: 6rem;
 }
 
 .removeSpan {
   font-family: "nunitolight_italic";
 }
 
+@media screen and (max-width: 400px) {
+  .usersSourceItem {
+    max-width: 7rem;
+  }
+}
 @font-face {
   font-family: "nunitoregular";
   src: url("/fonts/nunito-regular.woff");
@@ -286,6 +379,22 @@
   flex-direction: column;
 }
 
+@media screen and (max-width: 400px) {
+  #footer {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 1rem;
+  }
+
+  .footerSources {
+    width: 50%;
+  }
+
+  .legal {
+    width: 50%;
+    text-align: center;
+  }
+}
 @font-face {
   font-family: "nunitoregular";
   src: url("/fonts/nunito-regular.woff");
@@ -358,6 +467,33 @@
   padding-bottom: 4rem;
 }
 
+@media screen and (max-width: 400px) {
+  #scoreMain {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+  }
+
+  #scoreCardContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.18rem;
+  }
+
+  .scoreCard {
+    width: 80%;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .uncatScorePara {
+    max-width: 100%;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 3rem;
+  }
+}
 @font-face {
   font-family: "nunitoregular";
   src: url("/fonts/nunito-regular.woff");
@@ -392,23 +528,37 @@
   border-radius: 1rem;
   padding: 1.5rem;
   background-color: #050c26;
-  max-width: 42%;
 }
 
 .democraticHeader {
   color: #0000FF;
-  text-shadow: 2px 2px #202027;
+  text-shadow: 2px 2px #181824;
   font-family: "nunitobold";
   font-size: xx-large;
 }
 
 .republicanHeader {
   color: red;
-  text-shadow: 2px 2px #31313c;
+  text-shadow: 2px 2px #2c1919;
   font-family: "nunitobold";
   font-size: xx-large;
 }
 
+@media screen and (max-width: 400px) {
+  .countryAndCat {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  .mapContainer {
+    width: 90%;
+    padding-left: 0.15rem;
+    padding-right: 0.15rem;
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+}
 @font-face {
   font-family: "nunitoregular";
   src: url("/fonts/nunito-regular.woff");
@@ -436,10 +586,10 @@
   border-radius: 1rem;
   padding: 1rem;
   width: 70%;
-  margin: 1rem 2rem 5rem 15rem;
+  margin: 1rem 2rem 5rem 12vw;
 }
 
-.recommandationSubContainer {
+.recommendationSubContainer {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -447,12 +597,29 @@
   width: auto;
   background-color: #050c26;
 }
-.recommandationSubContainer img {
+.recommendationSubContainer img {
   height: 5rem;
   width: auto;
   margin: 1rem;
 }
 
+@media screen and (max-width: 400px) {
+  .recommendationContainer {
+    width: 83%;
+    margin: 1rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .recommendationSubContainer {
+    width: 83%;
+  }
+  .recommendationSubContainer img {
+    height: 5rem;
+    width: 5rem;
+    margin: 1rem;
+  }
+}
 @font-face {
   font-family: "nunitoregular";
   src: url("/fonts/nunito-regular.woff");
@@ -469,38 +636,35 @@
   font-family: "nunitolight_italic";
   src: url("/fonts/nunito-lightitalic.woff");
 }
+#aboutMain {
+  background-color: #090a15;
+  width: 100vw;
+  height: 100vh;
+}
+
+#aboutCenter {
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #aboutPara {
   color: #faf4df;
   background-color: #050c26;
   border: 1px solid #fc4920;
-  padding: 2rem;
+  border-radius: 1rem;
   font-family: "nunitolight";
-  height: auto;
+  height: 20%;
   width: 70%;
+  padding: 2rem;
 }
 
-::-webkit-scrollbar {
-  width: 0.5rem;
+@media screen and (max-width: 400px) {
+  #aboutPara {
+    height: auto;
+  }
 }
-
-::-webkit-scrollbar-track {
-  background: #fc4920;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #050c26;
-}
-
-#__next {
-  height: 100vh;
-  width: 100vw;
-}
-
-#aboutPara {
-  font-size: 2rem;
-  text-align: center;
-}
-
 body {
   font-family: "nunitoregular";
   font-size: 1rem;

@@ -23,7 +23,7 @@ const Recommendation = (props) => {
   return (
     <div className="recommendationContainer">
       <h3>{recommendText}</h3>
-      <div className="recommandationSubContainer">
+      <div className="recommendationSubContainer">
       {
         fellInWhichWay === 'balanced' ? '' :
           fellInWhichWay === 'left' ?

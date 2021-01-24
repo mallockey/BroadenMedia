@@ -1,10 +1,27 @@
 @import var
 
+#aboutMain
+  background-color: $background-color
+  width: 100vw
+  height: 100vh
+
+#aboutCenter
+  height: 60%
+  display: flex
+  justify-content: center
+  align-items: center
+
 #aboutPara
   color: $main-text-color
   background-color: $header-background-color
   border: 1px solid $main-link-color
-  padding: 2rem
+  border-radius: 1rem
   font-family: $thin-font
-  height: auto
+  height: 20%
   width: 70%
+  padding: 2rem
+
+
+@media screen and ( max-width: $small )
+  #aboutPara
+    height: auto

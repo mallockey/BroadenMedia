@@ -10,7 +10,7 @@ const Footer = () => {
         <a href="https://newsapi.org/">Powered by NewsAPI</a>
         <a href="https://www.linkedin.com/in/joshuamelo1/">LinkedIn</a>
       </span>
-      <span>Copyright © {date} Joshua Melo. All rights reserved.</span>
+      <span className="legal">Copyright © {date} Joshua Melo. All rights reserved.</span>
     </div>
   )
 }

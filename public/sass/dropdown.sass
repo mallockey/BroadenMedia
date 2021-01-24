@@ -1,31 +1,45 @@
 @import var
 
-#searchResultsContainer
-  position: relative
+.searchResultsContainer
   overflow: auto
-  min-height: 10rem
+  max-width: 28vw
+  max-height: 20rem
 
-.searchItem
-  display: flex
-  font-size: 1.2rem
-  padding: 1rem
-  justify-content: space-between
-  border-bottom: 1px solid $main-text-color
-  align-items: center
-  height: 3rem
-  margin-left: .5rem
-  margin-right: .5rem
-  background-color: $main-link-color
+  .searchResultsContainerMin
+    min-height: 0
+
+  .searchItem
+    display: flex
+    font-size: 1.2rem
+    padding: 1rem
+    justify-content: space-between
+    border-bottom: 1px solid $main-text-color
+    align-items: center
+    height: 2.5rem
+    margin-left: .5rem
+    background-color: $main-link-color
+    color: $header-background-color
+    width: 25vw
+
+  button
+    color: $header-background-color
+    background-color: $main-link-color
+    outline: none
+    box-shadow: none
 
 .searchItem:hover
   background-color: $main-link-hover-color
+  color: $main-text-color
+
+  button
+    background-color: $main-link-hover-color
+    color: $main-text-color
 
   .searchItemBtn
     display: flex
     justify-content: center
     align-items: center
-    background: none
-    font-size: 2rem
+    font-size: 2.5rem
     text-align: center
     height: .15rem
     width: .15rem
@@ -37,3 +51,46 @@
   font-size: 1rem
   font-style: italic
   opacity: .75
+
+
+@media screen and (max-width: $small)
+  .searchResultsContainer
+    height: 30vh
+    max-width: 100vw
+
+    .searchItem
+      background-color: $main-link-color
+      border-bottom: 1px solid $header-background-color
+      display: flex
+      font-size: 1.2rem
+      padding: 1rem
+      justify-content: space-between
+      align-items: center
+      height: 2rem
+      width: 78%
+
+      .searchItemBtn
+        background-color: $main-link-color
+        color: $header-background-color
+        display: flex
+        justify-content: center
+        align-items: center
+        font-size: 2.5rem
+        height: .15rem
+        width: .15rem
+        outline: none
+        box-shadow: none
+
+    .searchItem:active
+      background-color: $main-link-hover-color
+      color: $main-text-color
+
+      button
+        background-color: $main-link-hover-color
+        color: $main-text-color
+
+  .searchCountry
+    font-size: 1rem
+    font-style: italic
+    opacity: .75
+

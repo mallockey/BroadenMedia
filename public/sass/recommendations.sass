@@ -11,9 +11,9 @@
   border-radius: 1rem
   padding: 1rem
   width: 70%
-  margin: 1rem 2rem 5rem 15rem
+  margin: 1rem 2rem 5rem 12vw
 
-.recommandationSubContainer
+.recommendationSubContainer
   display: flex
   justify-content: space-evenly
   align-items: center
@@ -25,4 +25,19 @@
     height: 5rem
     width: auto
     margin: 1rem
+
+@media screen and (max-width: $small)
+  .recommendationContainer
+    width: 83%
+    margin: 1rem 1rem 1rem 1rem
+    display: flex
+    flex-direction: column
+
+  .recommendationSubContainer
+    width: 83%
+
+    img
+      height: 5rem
+      width: 5rem
+      margin: 1rem
 
