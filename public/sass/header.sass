@@ -4,7 +4,7 @@
   background-color: $header-background-color
   color: $main-text-color
   display: flex
-  height: auto
+  height: 10vh
   justify-content: space-evenly
   align-items: center
   padding: 1rem
@@ -12,20 +12,27 @@
   top: 0
   left: 0
 
-
 .header-item
   height: auto
   width: auto
 
   a
-    font-weight: bold
-    font-size: 2rem
+    font-size: 1.5rem
 
 #site-logo
-  height: 7rem
+  height: 6rem
 
 @media screen and (max-width: $small)
   #header
+    height: 10vh
+    justify-content: space-evenly
     position: relative
     top: 0
     left: 0
+
+    .header-item
+      a
+        font-size: 1.5rem
+
+  #site-logo
+    height: 6rem
