@@ -1,5 +1,5 @@
 # Broaden MEdia
-A site that attempts to broaden your media sources!
+A site that attempts to broaden your media sources! [Live Site](https://broadenmedia.vercel.app/)
 ## Usage 
 A user can enter their news sources from the search bar and a percentage of right/left wing score will be calculated.
 ![Main](githubmedia/broadenSearch.gif)
